@@ -1,7 +1,12 @@
 package utils;
 
-public class PerformanceTester {
+public class Timer {
+    private String mTag;
     private long mStartTime;
+
+    public Timer(String tag) {
+        mTag = tag;
+    }
 
     public void start() {
         mStartTime = System.nanoTime();
@@ -11,7 +16,7 @@ public class PerformanceTester {
         long nanoTime = System.nanoTime() - mStartTime;
 
         double seconds = nanoTime / 1.0e9;
-        System.out.println("cost: " + seconds + "s");
+        System.out.println(mTag + " cost: " + seconds + "s");
 
         mStartTime = 0;
     }

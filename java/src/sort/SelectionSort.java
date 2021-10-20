@@ -1,5 +1,7 @@
 package sort;
 
+import utils.SortHelper;
+
 public class SelectionSort {
     private SelectionSort() {}
 
@@ -12,14 +14,8 @@ public class SelectionSort {
                 }
             }
             if (maxIndex != i) {
-                swap(arr, i, maxIndex);
+                SortHelper.swap(arr, i, maxIndex);
             }
         }
-    }
-
-    private static <E> void swap(E[] arr, int i, int j) {
-        E tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
     }
 }
