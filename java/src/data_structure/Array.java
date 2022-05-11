@@ -1,12 +1,11 @@
 package data_structure;
 
-import java.util.Arrays;
-
 public class Array<E> {
     private E[] mArray;
     private int mSize;
     private int mCapacity;
 
+    @SuppressWarnings("unchecked")
     public Array(int capacity) {
         mCapacity = capacity;
         mArray = (E[]) new Object[capacity];
@@ -76,6 +75,7 @@ public class Array<E> {
         return mSize == 0;
     }
 
+    @SuppressWarnings("unchecked")
     private void resize() {
         if (mSize >= mCapacity) {
             E[] tmp = mArray;

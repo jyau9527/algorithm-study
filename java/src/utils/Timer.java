@@ -1,7 +1,7 @@
 package utils;
 
 public class Timer {
-    private String mTag;
+    private final String mTag;
     private long mStartTime;
 
     public Timer(String tag) {

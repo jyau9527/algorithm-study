@@ -9,7 +9,7 @@ public class Tester {
 
     public static <E extends Comparable<E>> void test(String className, String methodName, E[] arr) {
         try {
-            String tag = className + "#" + methodName;
+            String tag = className + "#" + methodName + " dataSize: " + arr.length;
 
             Class<?> clazz = Class.forName(className);
             Method method = clazz.getMethod(methodName, Comparable[].class);

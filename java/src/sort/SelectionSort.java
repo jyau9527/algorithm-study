@@ -1,6 +1,10 @@
 package sort;
 
+import utils.ArrayGenerator;
 import utils.SortHelper;
+import utils.Tester;
+
+import java.util.Arrays;
 
 public class SelectionSort {
     private SelectionSort() {}
@@ -16,6 +20,14 @@ public class SelectionSort {
             if (maxIndex != i) {
                 SortHelper.swap(arr, i, maxIndex);
             }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] test = {10000, 100000};
+        for (int i : test) {
+            Integer[] arr = ArrayGenerator.generateRandomArray(i, 1000000);
+            Tester.test("sort.SelectionSort", "sort", arr);
         }
     }
 }
