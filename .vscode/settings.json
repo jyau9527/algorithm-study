@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/cpp",
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}
