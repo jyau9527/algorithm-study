@@ -8,6 +8,7 @@ import java.util.Arrays;
 public class MergeSort {
     private MergeSort() {}
 
+    // 自顶向下
     public static <E extends Comparable<E>> void sort(E[] arr) {
         E[] temp = Arrays.copyOf(arr, arr.length);
         sort(arr, 0, arr.length - 1, temp);
@@ -23,6 +24,21 @@ public class MergeSort {
         sort(arr, mid + 1, r, temp);
         if (arr[mid].compareTo(arr[mid + 1]) > 0) {
             merge(arr, l, mid, r, temp);
+        }
+    }
+
+    // 自底向上
+    public static <E extends Comparable<E>> void sortBU(E[] arr) {
+        E[] temp = Arrays.copyOf(arr, arr.length);
+        int n = arr.length;
+
+        for (int rangeSize = 1; rangeSize < n; rangeSize *= 2) {
+            // merge [i, i + rangeSize - 1] and [i + rangeSize, min(i + 2 * rangeSize - 1, n - 1)]
+            for (int i = 0; i + rangeSize < n; i += (2 * rangeSize)) {
+                if (arr[i + rangeSize - 1].compareTo(arr[i + rangeSize]) > 0) {
+                    merge(arr, i, i + rangeSize - 1, Math.min(i + 2 * rangeSize - 1, n - 1), temp);
+                }
+            }
         }
     }
 
@@ -51,8 +67,10 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] test = {10000, 100000, 1000000};
         for (int i : test) {
-            Integer[] arr = ArrayGenerator.generateRandomArray(i, 1000000);
+            Integer[] arr = ArrayGenerator.generateRandomArray(i, 100000000);
+            Integer[] arr2 = Arrays.copyOf(arr, arr.length);
             Tester.test("sort.MergeSort", "sort", arr);
+            Tester.test("sort.MergeSort", "sortBU", arr2);
         }
     }
 }
