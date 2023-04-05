@@ -146,8 +146,8 @@ public class QuickSort {
             Integer[] arr2 = Arrays.copyOf(arr, arr.length);
             Integer[] arr3 = Arrays.copyOf(arr, arr.length);
 //            Tester.test("sort.QuickSort", "sort", arr);
-            Tester.test("sort.QuickSort", "sort2Ways", arr2);
-            Tester.test("sort.QuickSort", "sort3Ways", arr3);
+            Tester.testSort("sort.QuickSort", "sort2Ways", arr2);
+            Tester.testSort("sort.QuickSort", "sort3Ways", arr3);
             System.out.println();
         }
     }

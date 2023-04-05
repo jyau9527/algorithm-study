@@ -15,8 +15,8 @@ public class Timer {
     public void stop() {
         long nanoTime = System.nanoTime() - mStartTime;
 
-        double seconds = nanoTime / 1.0e9;
-        System.out.println(mTag + " cost: " + seconds + "s");
+        double seconds = nanoTime / 1.0e6;
+        System.out.println(mTag + " cost: " + seconds + "ms");
 
         mStartTime = 0;
     }

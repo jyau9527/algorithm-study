@@ -62,8 +62,8 @@ public class InsertionSort {
         for (int i : test) {
             Integer[] arr = ArrayGenerator.generateRandomArray(i, 1000000);
             Integer[] arr2 = Arrays.copyOf(arr, arr.length);
-            Tester.test("sort.InsertionSort", "sort", arr);
-            Tester.test("sort.InsertionSort", "sort2", arr2);
+            Tester.testSort("sort.InsertionSort", "sort", arr);
+            Tester.testSort("sort.InsertionSort", "sort2", arr2);
         }
     }
 }

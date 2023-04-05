@@ -69,8 +69,8 @@ public class MergeSort {
         for (int i : test) {
             Integer[] arr = ArrayGenerator.generateRandomArray(i, 100000000);
             Integer[] arr2 = Arrays.copyOf(arr, arr.length);
-            Tester.test("sort.MergeSort", "sort", arr);
-            Tester.test("sort.MergeSort", "sortBU", arr2);
+            Tester.testSort("sort.MergeSort", "sort", arr);
+            Tester.testSort("sort.MergeSort", "sortBU", arr2);
         }
     }
 }

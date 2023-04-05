@@ -4,8 +4,6 @@ import utils.ArrayGenerator;
 import utils.SortHelper;
 import utils.Tester;
 
-import java.util.Arrays;
-
 public class SelectionSort {
     private SelectionSort() {}
 
@@ -27,7 +25,7 @@ public class SelectionSort {
         int[] test = {10000, 100000};
         for (int i : test) {
             Integer[] arr = ArrayGenerator.generateRandomArray(i, 1000000);
-            Tester.test("sort.SelectionSort", "sort", arr);
+            Tester.testSort("sort.SelectionSort", "sort", arr);
         }
     }
 }
